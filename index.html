@@ -425,36 +425,65 @@
             }
         }
 
-        /* Responsive adjustments */
+
+        /* Responsive adjustments - improved for FlutterFlow WebView */
         @media (max-width: 480px) {
+            body {
+                padding: 5vh 0; /* adds top/bottom breathing room on mobile */
+            }
+
             .logo-container {
-                width: 250px;
-                height: 250px;
+                width: 70vw;        /* scales logo proportionally with viewport width */
+                height: auto;       /* maintains natural height ratio */
             }
-            
+
             .chat-bubble {
-                width: 140px;
-                height: 140px;
+                width: 50vw;        /* resizes the bubble with screen width */
+                height: 50vw;
             }
-            
+
             .letter-m {
-                font-size: 70px;
+                font-size: clamp(48px, 12vw, 72px); /* scales font between 48–72px */
             }
-            
+
             .brand-name {
-                font-size: 26px;
+                font-size: clamp(20px, 6vw, 26px);
+                margin-top: 5vh; /* adds clear spacing below logo */
+                text-align: center;
             }
-            
+
+            .tagline {
+                font-size: clamp(10px, 3vw, 13px);
+                margin-top: 1.5vh; /* small space below brand name */
+                text-align: center;
+            }
+
             .orbit-container {
-                width: 180px;
-                height: 180px;
+                width: 60vw;
+                height: 60vw;
             }
 
             .wave:nth-child(1),
             .wave:nth-child(2),
             .wave:nth-child(3) {
-                width: 140px;
-                height: 140px;
+                width: 50vw;
+                height: 50vw;
+            }
+
+            /* Optional: reduce particle area to match smaller logo */
+            .particles {
+                width: 70vw;
+                height: 70vw;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .brand-name {
+                margin-top: 4vh;
+            }
+
+            .tagline {
+                margin-top: 1vh;
             }
         }
     </style>
