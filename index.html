@@ -16,39 +16,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #E8F0FE 0%, #F3E8FF 100%);
+            background: #FFFFFF;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             overflow: hidden;
             position: relative;
-        }
-
-        /* Animated background grid */
-        .grid-background {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(102, 126, 234, 0.06) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(102, 126, 234, 0.06) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: gridMove 20s linear infinite;
-            opacity: 0;
-            animation-delay: 0.5s;
-            animation-fill-mode: forwards;
-        }
-
-        @keyframes gridMove {
-            0% {
-                opacity: 0;
-                transform: translateY(0);
-            }
-            10% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(50px);
-            }
         }
 
         /* Floating particles */
@@ -61,7 +32,7 @@
 
         .particle {
             position: absolute;
-            width: 10px;
+            width: 6px;
             height: 10px;
             background: rgba(102, 126, 234, 0.3);
             border-radius: 50%;
@@ -78,16 +49,6 @@
         .particle:nth-child(8) { left: 80%; animation-delay: 4s; animation-duration: 15s; }
         .particle:nth-child(9) { left: 90%; animation-delay: 1s; animation-duration: 19s; }
         .particle:nth-child(10) { left: 15%; animation-delay: 6s; animation-duration: 14s; }
-        .particle:nth-child(11) { left: 25%; animation-delay: 3s; animation-duration: 16s; }
-        .particle:nth-child(12) { left: 35%; animation-delay: 5s; animation-duration: 13s; }
-        .particle:nth-child(13) { left: 45%; animation-delay: 2s; animation-duration: 18s; }
-        .particle:nth-child(14) { left: 55%; animation-delay: 4s; animation-duration: 15s; }
-        .particle:nth-child(15) { left: 65%; animation-delay: 1s; animation-duration: 17s; }
-        .particle:nth-child(16) { left: 75%; animation-delay: 6s; animation-duration: 14s; }
-        .particle:nth-child(17) { left: 85%; animation-delay: 3s; animation-duration: 16s; }
-        .particle:nth-child(18) { left: 95%; animation-delay: 5s; animation-duration: 19s; }
-        .particle:nth-child(19) { left: 12%; animation-delay: 2s; animation-duration: 13s; }
-        .particle:nth-child(20) { left: 88%; animation-delay: 4s; animation-duration: 18s; }
 
         @keyframes particleFloat {
             0% {
@@ -120,7 +81,7 @@
         .orb1 {
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(102, 126, 234, 0.2) 0%, rgba(102, 126, 234, 0.05) 100%);
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.15) 0%, rgba(102, 126, 234, 0.03) 100%);
             top: 10%;
             left: 10%;
             animation-delay: 0s;
@@ -129,7 +90,7 @@
         .orb2 {
             width: 350px;
             height: 350px;
-            background: radial-gradient(circle, rgba(155, 105, 229, 0.2) 0%, rgba(155, 105, 229, 0.05) 100%);
+            background: radial-gradient(circle, rgba(155, 105, 229, 0.15) 0%, rgba(155, 105, 229, 0.03) 100%);
             bottom: 20%;
             right: 15%;
             animation-delay: 2s;
@@ -138,7 +99,7 @@
         .orb3 {
             width: 300px;
             height: 300px;
-            background: radial-gradient(circle, rgba(91, 143, 222, 0.15) 0%, rgba(91, 143, 222, 0.05) 100%);
+            background: radial-gradient(circle, rgba(91, 143, 222, 0.12) 0%, rgba(91, 143, 222, 0.03) 100%);
             top: 50%;
             right: 10%;
             animation-delay: 4s;
@@ -146,19 +107,19 @@
 
         @keyframes orbFloat {
             0%, 100% {
-                opacity: 0.2;
+                opacity: 0.15;
                 transform: translate(0, 0) scale(1);
             }
             25% {
-                opacity: 0.3;
+                opacity: 0.25;
                 transform: translate(20px, -20px) scale(1.05);
             }
             50% {
-                opacity: 0.35;
+                opacity: 0.3;
                 transform: translate(30px, -30px) scale(1.1);
             }
             75% {
-                opacity: 0.3;
+                opacity: 0.25;
                 transform: translate(15px, -25px) scale(1.05);
             }
         }
@@ -211,7 +172,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 30px;
+            gap: 70px;
         }
 
         /* Pulse waves - moved behind logo */
@@ -478,33 +439,6 @@
             }
         }
 
-        .brand-name span {
-            display: inline-block;
-            animation: letterPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-            opacity: 0;
-        }
-
-        .brand-name span:nth-child(1) { animation-delay: 1.3s; }
-        .brand-name span:nth-child(2) { animation-delay: 1.4s; }
-        .brand-name span:nth-child(3) { animation-delay: 1.5s; }
-        .brand-name span:nth-child(4) { animation-delay: 1.6s; }
-        .brand-name span:nth-child(5) { animation-delay: 1.7s; }
-        .brand-name span:nth-child(6) { animation-delay: 1.8s; }
-
-        @keyframes letterPop {
-            0% {
-                opacity: 0;
-                transform: translateY(20px) scale(0.5);
-            }
-            70% {
-                transform: translateY(-5px) scale(1.15);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
         .tagline {
             font-size: 16px;
             font-weight: 500;
@@ -560,57 +494,72 @@
         /* Responsive design */
         @media (max-width: 480px) {
             body {
-                padding: 5vh 0;
+                padding: 20px;
             }
 
             .logo-wrapper {
-                width: 35vw;
-                height: 35vw;
-                max-width: 180px;
-                max-height: 180px;
+                width: 140px;
+                height: 140px;
             }
 
             .logo-circle {
-                width: 100%;
-                height: 100%;
+                width: 140px;
+                height: 140px;
             }
 
             .logo-circle img {
-                width: 70%;
-                height: 70%;
+                width: 100px;
+                height: 100px;
             }
 
             .productivity-ring {
-                width: 55vw;
-                height: 55vw;
-                max-width: 300px;
-                max-height: 300px;
+                width: 240px;
+                height: 240px;
             }
 
             .icon-dot {
-                width: 38px;
-                height: 38px;
-                font-size: 18px;
-                margin-left: -19px;
-                margin-top: -19px;
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+                margin-left: -18px;
+                margin-top: -18px;
             }
+            
+            .icon-dot:nth-child(1)  { transform: rotate(0deg) translate(100px) rotate(0deg); }
+            .icon-dot:nth-child(2)  { transform: rotate(36deg) translate(100px) rotate(-36deg); }
+            .icon-dot:nth-child(3)  { transform: rotate(72deg) translate(100px) rotate(-72deg); }
+            .icon-dot:nth-child(4)  { transform: rotate(108deg) translate(100px) rotate(-108deg); }
+            .icon-dot:nth-child(5)  { transform: rotate(144deg) translate(100px) rotate(-144deg); }
+            .icon-dot:nth-child(6)  { transform: rotate(180deg) translate(100px) rotate(-180deg); }
+            .icon-dot:nth-child(7)  { transform: rotate(216deg) translate(100px) rotate(-216deg); }
+            .icon-dot:nth-child(8)  { transform: rotate(252deg) translate(100px) rotate(-252deg); }
+            .icon-dot:nth-child(9)  { transform: rotate(288deg) translate(100px) rotate(-288deg); }
+            .icon-dot:nth-child(10) { transform: rotate(324deg) translate(100px) rotate(-324deg); }
 
             .brand-name {
-                font-size: clamp(32px, 8vw, 48px);
+                font-size: 36px;
+                letter-spacing: 1px;
             }
 
             .tagline {
-                font-size: clamp(12px, 3.5vw, 16px);
+                font-size: 12px;
                 letter-spacing: 2px;
             }
 
             .pulse-ring:nth-child(1),
             .pulse-ring:nth-child(2),
             .pulse-ring:nth-child(3) {
-                width: 35vw;
-                height: 35vw;
-                max-width: 180px;
-                max-height: 180px;
+                width: 140px;
+                height: 140px;
+            }
+
+            .orb1, .orb2, .orb3 {
+                width: 250px;
+                height: 250px;
+            }
+
+            .particles {
+                display: none;
             }
         }
 
@@ -621,8 +570,13 @@
             }
 
             .logo-circle {
-                width: 100%;
-                height: 100%;
+                width: 160px;
+                height: 160px;
+            }
+
+            .logo-circle img {
+                width: 110px;
+                height: 110px;
             }
 
             .brand-name {
@@ -630,28 +584,41 @@
             }
 
             .productivity-ring {
-                width: 280px;
-                height: 280px;
+                width: 270px;
+                height: 270px;
+            }
+
+            .icon-dot {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+                margin-left: -20px;
+                margin-top: -20px;
+            }
+
+            .icon-dot:nth-child(1)  { transform: rotate(0deg) translate(115px) rotate(0deg); }
+            .icon-dot:nth-child(2)  { transform: rotate(36deg) translate(115px) rotate(-36deg); }
+            .icon-dot:nth-child(3)  { transform: rotate(72deg) translate(115px) rotate(-72deg); }
+            .icon-dot:nth-child(4)  { transform: rotate(108deg) translate(115px) rotate(-108deg); }
+            .icon-dot:nth-child(5)  { transform: rotate(144deg) translate(115px) rotate(-144deg); }
+            .icon-dot:nth-child(6)  { transform: rotate(180deg) translate(115px) rotate(-180deg); }
+            .icon-dot:nth-child(7)  { transform: rotate(216deg) translate(115px) rotate(-216deg); }
+            .icon-dot:nth-child(8)  { transform: rotate(252deg) translate(115px) rotate(-252deg); }
+            .icon-dot:nth-child(9)  { transform: rotate(288deg) translate(115px) rotate(-288deg); }
+            .icon-dot:nth-child(10) { transform: rotate(324deg) translate(115px) rotate(-324deg); }
+
+            .pulse-ring:nth-child(1),
+            .pulse-ring:nth-child(2),
+            .pulse-ring:nth-child(3) {
+                width: 160px;
+                height: 160px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Background effects -->
-    <div class="grid-background"></div>
-    
     <!-- Floating particles -->
     <div class="particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
@@ -710,9 +677,7 @@
 
         <!-- Brand text -->
         <div class="brand-text">
-            <div class="brand-name">
-                <span>M</span><span>a</span><span>i</span><span>-</span><span>P</span><span>A</span>
-            </div>
+            <div class="brand-name">Mai-PA</div>
             <div class="tagline">My AI Personal Assistant</div>
             <div class="loading-dots">
                 <div class="dot"></div>
